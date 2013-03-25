@@ -1,0 +1,33 @@
+{
+	"name": "mask",
+	"title": "jQuery Mask",
+	"description": "jQuery plugin put maskes in inputs",
+	"keywords": [
+		"mask"
+	],
+	"version": "0.1.0",
+	"author": {
+		"name": "William Bruno",
+		"url": "https://github.com/wbruno"
+	},
+	"maintainers": [
+		{
+			"name": "wbruno",
+			"email": "wbrunom@gmail.com",
+			"url": "http://wbruno.com.br"
+		}
+	],
+	"licenses": [
+		{
+			"type": "MIT",
+			"url": "https://github.com/wbruno/jquery.mask/blob/master/MIT-LICENSE.txt"
+		}
+	],
+	"bugs": "https://github.com/wbruno/jquery.mask/issues",
+	"homepage": "https://github.com/wbruno/jquery.mask",
+	"docs": "https://github.com/wbruno/jquery.mask",
+	"download": "https://github.com/wbruno/jquery.mask",
+	"dependencies": {
+		"jquery": ">=1.9"
+	}
+}
