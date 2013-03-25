@@ -1,0 +1,53 @@
+<html>
+<head>
+	<meta charset="utf-8" />
+    <title>Plugin jQuery.mask - REGEX</title>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="src/jquery.mask.js"></script>
+
+<script type="text/javascript">
+jQuery.fn.mask.user_defined = function(v){
+	v = v.replace(/\D/g, "");
+	v = v.replace(/(\d{3})(\d)/, "$1/$2");
+	v = v.replace(/(\d+)(\d{2})$/, "$1-$2");
+	return v;
+};
+jQuery(document).ready(function(){
+    jQuery('input[name^="NumeroCC"]').mask({mask: 'cc'});
+    jQuery('input[name="cep"]').mask({mask: 'cep'});
+
+    jQuery('input[name="dinheiro"]').mask({mask: 'money'});
+
+
+    jQuery('input[name="other"]').mask({mask: 'user_defined'});
+});
+</script>
+<style type="text/css">
+label span,
+label { display: block; }
+label { margin-bottom: 10px; }
+</style>
+</head>
+<body>
+
+	<label><span>Cartão de Crédito Visa</span>
+    <input type="number" name="NumeroCC" maxlength="19" /></label>
+
+    <label><span>Cartão de Crédito MasterCard</span>
+    <input type="number" name="NumeroCC" maxlength="19" /></label>
+
+	<label><span>CEP</span>
+    <input type="text" name="cep" maxlength="9" /></label>
+
+	<label><span>Dinheiro</span>
+    <input type="text" name="dinheiro" maxlength="15" /></label>
+
+	<label><span>Other</span>
+    <input type="text" name="other" maxlength="9" /></label>
+</body>
+</html>
+
+
+
+
