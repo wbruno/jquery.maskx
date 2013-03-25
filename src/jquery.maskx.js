@@ -1,9 +1,9 @@
 /**
- * @file jquery.mask.js
+ * @file jquery.maskx.js
  * @author William Bruno <wbrunom@gmail.com>
  * @date 2013-03-25
  *
- * @use jQuery('input[name="cc"]').mask({mask: 'cc'});
+ * @use jQuery('input[name="cc"]').maskx({maskx: 'cc'});
  */
 ;( function() {
 	/*global jQuery: false*/
@@ -21,12 +21,12 @@
 		};
 		return this.each( function() {
 			var $this = jQuery(this),
-			opts = jQuery.extend({}, jQuery.fn.mask.defaults, settings ),
-			maskFunc = jQuery.fn.mask[opts.mask];
+			opts = jQuery.extend({}, jQuery.fn.maskx.defaults, settings ),
+			maskxFunc = jQuery.fn.maskx[opts.maskx];
 
-			if(typeof maskFunc === 'function') {
+			if(typeof maskxFunc === 'function') {
 				$this.on('keypress', function(){
-					_mascara(this, maskFunc);
+					_mascara(this, maskxFunc);
 					$this.removeClass('is-empty');
 				});
 				$this.on('blur', function(){
@@ -37,10 +37,10 @@
 			}
 		});
 	};
-	jQuery.fn.mask = plugin;
+	jQuery.fn.maskx = plugin;
 
 	plugin.defaults = {
-		mask: '',
+		maskx: '',
 		classEmpty: 'is-empty'
 	};
 	plugin.cc = function(v) {
