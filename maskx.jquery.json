@@ -3,9 +3,12 @@
 	"title": "jQuery Mask",
 	"description": "jQuery plugin put maskes in inputs",
 	"keywords": [
-		"mask"
+		"mask",
+		"form",
+		"input",
+		"maskx"
 	],
-	"version": "0.1.4",
+	"version": "0.1.5",
 	"author": {
 		"name": "William Bruno",
 		"url": "https://github.com/wbruno"
