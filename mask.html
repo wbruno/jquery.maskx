@@ -14,12 +14,12 @@ jQuery.fn.maskx.user_defined = function(v){
 	return v;
 };
 jQuery(document).ready(function(){
-    jQuery('input[name^="NumeroCC"]').maskx({maskx: 'cc'});
+    jQuery('.cartoes').maskx({maskx: 'cc'});//pela class
+
+    jQuery('#input_dinheiro').maskx({maskx: 'money'});//pelo id
+
+    jQuery('input[name="dinheiro"]').maskx({maskx: 'money'});//pelo name
     jQuery('input[name="cep"]').maskx({maskx: 'cep'});
-
-    jQuery('input[name="dinheiro"]').maskx({maskx: 'money'});
-
-
     jQuery('input[name="other"]').maskx({maskx: 'user_defined'});
 });
 </script>
@@ -34,16 +34,19 @@ label { margin-bottom: 10px; }
     <h1>Plugin jQuery.maskx com REGEX</h1>
 
 	<label><span>Cartão de Crédito Visa</span>
-    <input type="number" name="NumeroCC" maxlength="19" /></label>
+    <input type="number" name="NumeroCC" class="cartoes" maxlength="19" /></label>
 
     <label><span>Cartão de Crédito MasterCard</span>
-    <input type="number" name="NumeroCC" maxlength="19" /></label>
+    <input type="number" name="NumeroCC" class="cartoes" maxlength="19" /></label>
+
+    <label><span>Dinheiro 2</span>
+    <input type="text" name="dinheiro2" id="input_dinheiro" maxlength="14" /></label>
+
+    <label><span>Dinheiro</span>
+    <input type="text" name="dinheiro" maxlength="14" /></label>
 
 	<label><span>CEP</span>
     <input type="text" name="cep" maxlength="9" /></label>
-
-	<label><span>Dinheiro</span>
-    <input type="text" name="dinheiro" maxlength="15" /></label>
 
 	<label><span>Other</span>
     <input type="text" name="other" maxlength="9" /></label>
