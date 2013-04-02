@@ -25,6 +25,9 @@
 			maskxFunc = jQuery.fn.maskx[opts.maskx];
 
 			if(typeof maskxFunc === 'function') {
+
+				$this.attr('type','tel');
+
 				$this.on('keypress', function(){
 					_mascara(this, maskxFunc);
 					$this.removeClass('is-empty');
