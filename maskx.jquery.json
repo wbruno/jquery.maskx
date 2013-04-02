@@ -1,7 +1,7 @@
 {
 	"name": "maskx",
 	"title": "jQuery Mask",
-	"description": "jQuery plugin put maskes in inputs",
+	"description": "jQuery plugin put maskes in inputs, that supports mobile",
 	"keywords": [
 		"mask",
 		"form",
