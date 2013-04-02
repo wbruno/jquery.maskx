@@ -3,21 +3,21 @@
  * @author William Bruno <wbrunom@gmail.com>
  * @date 2013-03-25
  *
- * @use jQuery('input[name="cc"]').maskx({maskx: 'cc'});
+ * @use jQuery('$input[name="cc"]').maskx({maskx: 'cc'});
  */
 ;( function() {
 	/*global jQuery: false*/
 	'use strict';
 
 	var plugin = function(settings) {
-		var v_obj, v_fun;
+		var $input, mask;
 		var _mascara = function(o,f) {
-			v_obj = o;
-			v_fun = f;
+			$input = o;
+			mask = f;
 			setTimeout(_execmascara,1);
 		};
 		var _execmascara = function() {
-			v_obj.value = v_fun(v_obj.value);
+			$input.value = mask($input.value);
 		};
 		return this.each( function() {
 			var $this = jQuery(this),
