@@ -94,8 +94,8 @@
 	};
 	plugin.phone = function(v){
 		v = v.replace(/\D/g, "");
-		v = v.replace(/^(\d\d)(\d)/g, "($1) $2");
-		v = v.replace(/(\d{4})(\d)/, "$1-$2");
+		v = v.replace(/^(\d{2})(\d)/g,"($1) $2");
+		v = v.replace(/(\d)(\d{4})$/,"$1-$2");
 		return v;
 	};
 	plugin.rg = function(v){

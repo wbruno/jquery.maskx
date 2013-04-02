@@ -24,6 +24,9 @@ jQuery.fn.maskx.user_defined = function(v){
 	jQuery('input[name="dinheiro"]').maskx({maskx: 'money'});//pelo name
 	jQuery('input[name="cep"]').maskx({maskx: 'cep'});
 	jQuery('input[name="other"]').maskx({maskx: 'user_defined'});
+
+
+	jQuery('input[name="telefone"]').maskx({maskx: 'phone'});
 });
 </script>
 <style type="text/css">
@@ -54,6 +57,9 @@ label { margin-bottom: 10px; }
 	<label><span>Other</span>
 	<input type="text" name="other" maxlength="9" /></label>
 
+
+	<label><span>Telefone</span>
+	<input type="text" name="telefone" maxlength="15" /></label>
 
 </body>
 </html>
