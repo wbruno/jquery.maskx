@@ -8,7 +8,7 @@
 		"input",
 		"maskx"
 	],
-	"version": "0.1.6",
+	"version": "0.1.7",
 	"author": {
 		"name": "William Bruno",
 		"url": "https://github.com/wbruno"
@@ -31,6 +31,6 @@
 	"docs": "https://github.com/wbruno/jquery.mask",
 	"download": "https://github.com/wbruno/jquery.mask",
 	"dependencies": {
-		"jquery": ">=1.9"
+		"jquery": ">=1.4.2"
 	}
 }

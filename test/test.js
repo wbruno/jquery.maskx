@@ -72,7 +72,7 @@
 			expect(maskx.phone('1112345678')).toEqual('(11) 1234-5678');
 		});
 		it("should be equal", function() {
-			expect(maskx.phone('11123456789')).toEqual('(11) 1234-56789');
+			expect(maskx.phone('11123456789')).toEqual('(11) 12345-6789');
 		});
 	});
 
