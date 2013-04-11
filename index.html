@@ -16,7 +16,36 @@ jQuery.fn.maskx.user_defined = function(v){
 	v = v.replace(/(\d+)(\d{2})$/, "$1-$2");
 	return v;
 };
-	jQuery(document).ready(function(){
+
+function zeroFill(amount) {
+	var fill = '';
+	while(amount--) {
+		fill += '0';
+	}
+	return fill;
+}
+jQuery.fn.maskx.weight = function(v){
+	var integer = 0,
+		c = '';
+
+	v = v + '';
+	integer = v.split(',')[0];
+
+	v = v.replace(/\D/g, "");
+	v = v.replace(/^[0]+/, "");
+
+	if(v.length <= 4 || !integer)
+	{
+		c = zeroFill(4 - v.length);
+		v = '0,' + c + v;
+	} else {
+		v = v.replace(/^(\d{1,})(\d{4})$/, "$1,$2");
+	}
+
+	return v;
+};
+
+jQuery(document).ready(function(){
 	jQuery('.cartoes').maskx({maskx: 'cc'});//pela class
 
 	jQuery('#input_dinheiro').maskx({maskx: 'money'});//pelo id
@@ -27,6 +56,8 @@ jQuery.fn.maskx.user_defined = function(v){
 
 
 	jQuery('input[name="telefone"]').maskx({maskx: 'phone'});
+
+	jQuery('input[name="peso"]').maskx({maskx: 'weight'});
 });
 </script>
 <style type="text/css">
@@ -38,6 +69,7 @@ label { margin-bottom: 10px; }
 <body>
 
 	<h1>Plugin jQuery.maskx com REGEX</h1>
+
 
 	<label><span>Cartão de Crédito Visa</span>
 	<input type="number" name="NumeroCC" class="cartoes" maxlength="19" pattern="[0-9]{4}\s[0-9]{4}\s[0-9]{4}\s[0-9]{4}" /></label>
@@ -57,9 +89,12 @@ label { margin-bottom: 10px; }
 	<label><span>Other</span>
 	<input type="text" name="other" maxlength="9" /></label>
 
-
 	<label><span>Telefone</span>
 	<input type="text" name="telefone" maxlength="15" /></label>
+
+	<label><span>Peso</span>
+	<input type="text" name="peso" maxlength="8" /></label>
+
 
 </body>
 </html>
