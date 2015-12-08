@@ -56,6 +56,7 @@ jQuery(document).ready(function(){
 
 
 	jQuery('input[name="telefone"]').maskx({maskx: 'phone'});
+	jQuery('input[name="telefone-usa"]').maskx({maskx: 'phone-usa'});
 
 	jQuery('input[name="peso"]').maskx({maskx: 'weight'});
 });
@@ -91,6 +92,9 @@ label { margin-bottom: 10px; }
 
 	<label><span>Telefone</span>
 	<input type="text" name="telefone" maxlength="15" /></label>
+
+	<label><span>Telefone (USA)</span>
+	<input type="text" name="telefone-usa" maxlength="14" /></label>
 
 	<label><span>Peso</span>
 	<input type="text" name="peso" maxlength="8" /></label>

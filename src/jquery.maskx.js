@@ -98,6 +98,12 @@
 		v = v.replace(/(\d)(\d{4})$/, "$1-$2");
 		return v;
 	};
+	plugin['phone-usa'] = function (v) {
+		v = v.replace(/\D/g, "");
+		v = v.replace(/^(\d{3})(\d)/g, "($1) $2");
+		v = v.replace(/(\d)(\d{4})$/, "$1-$2");
+		return v;
+	};
 	plugin.rg = function (v) {
 		v = v.replace(/\D/g, "");
 		v = v.replace(/(\d)(\d{7})$/, "$1.$2");
