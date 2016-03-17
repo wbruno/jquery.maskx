@@ -49,6 +49,7 @@
 		classEmpty: 'is-empty'
 	};
 	plugin.cc = function (v) {
+		v = String(v || '');
 		v = v.replace(/\D/g, "");
 		v = v.replace(/^(\d{4})(\d)/g, "$1 $2");
 		v = v.replace(/^(\d{4})\s(\d{4})(\d)/g, "$1 $2 $3");
@@ -56,11 +57,13 @@
 		return v;
 	};
 	plugin.cep = function (v) {
+		v = String(v || '');
 		v = v.replace(/\D/g, "");
 		v = v.replace(/^(\d{5})(\d)/, "$1-$2");
 		return v;
 	};
 	plugin.cnpj = function (v) {
+		v = String(v || '');
 		v = v.replace(/\D/g, "");
 		v = v.replace(/^(\d{2})(\d)/, "$1.$2");
 		v = v.replace(/^(\d{2})\.(\d{3})(\d)/, "$1.$2.$3");
@@ -69,6 +72,7 @@
 		return v;
 	};
 	plugin.cpf = function (v) {
+		v = String(v || '');
 		v = v.replace(/\D/g, "");
 		v = v.replace(/(\d{3})(\d)/, "$1.$2");
 		v = v.replace(/(\d{3})(\d)/, "$1.$2");
@@ -76,6 +80,7 @@
 		return v;
 	};
 	plugin.dateBR = function (v) {
+		v = String(v || '');
 		v = v.replace(/\D/g, "");
 		v = v.replace(/(\d{2})(\d)/, "$1/$2");
 		v = v.replace(/(\d{2})(\d)/, "$1/$2");
@@ -83,11 +88,13 @@
 		return v;
 	};
 	plugin.hour = function (v) {
+		v = String(v || '');
 		v = v.replace(/\D/g, "");
 		v = v.replace(/(\d{2})(\d)/, "$1h$2");
 		return v;
 	};
 	plugin.money = function (v) {
+		v = String(v || '');
 		v = v.replace(/\D/g, "");
 		v = v.replace(/(\d)(\d{8})$/, "$1.$2");
 		v = v.replace(/(\d)(\d{5})$/, "$1.$2");
@@ -95,18 +102,21 @@
 		return v;
 	};
 	plugin.phone = function (v) {
+		v = String(v || '');
 		v = v.replace(/\D/g, "");
 		v = v.replace(/^(\d{2})(\d)/g, "($1) $2");
 		v = v.replace(/(\d)(\d{4})$/, "$1-$2");
 		return v;
 	};
 	plugin['phone-usa'] = function (v) {
+		v = String(v || '');
 		v = v.replace(/\D/g, "");
 		v = v.replace(/^(\d{3})(\d)/g, "($1) $2");
 		v = v.replace(/(\d)(\d{4})$/, "$1-$2");
 		return v;
 	};
 	plugin.rg = function (v) {
+		v = String(v || '');
 		v = v.replace(/\D/g, "");
 		v = v.replace(/(\d)(\d{7})$/, "$1.$2");
 		v = v.replace(/(\d)(\d{4})$/, "$1.$2");
@@ -114,6 +124,7 @@
 		return v;
 	};
 	plugin.time = function (v) {
+		v = String(v || '');
 		v = v.replace(/\D/g, "");
 		v = v.replace(/(\d{1})(\d{2})(\d{2})/, "$1:$2.$3");
 		return v;
