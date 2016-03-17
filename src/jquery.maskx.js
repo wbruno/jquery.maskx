@@ -12,7 +12,7 @@
 	var plugin = function (settings) {
 		var $input, mask,
 			_execmascara = function () {
-				$input.value = mask($input.value);
+				$input.value = mask($input.value, 'input');
 			},
 			_mascara = function (o, f) {
 				$input = o;
@@ -41,8 +41,8 @@
 		});
 	};
 
-	$.fn.maskx = plugin;
-	$.maskx = plugin;
+    $.fn.maskx = plugin;
+    $.maskx = plugin;
 
 	plugin.defaults = {
 		maskx: '',
@@ -93,8 +93,12 @@
 		v = v.replace(/(\d{2})(\d)/, "$1h$2");
 		return v;
 	};
-	plugin.money = function (v) {
+	plugin.money = function (v, input) {
+		if (!input && /^\d+$/.test(v)) {
+			v = parseInt(v, 10) * 100;
+    	}		
 		v = String(v || '');
+		v = v.replace(/(\d)\.(\d{1}$)/, "$1.$20");
 		v = v.replace(/\D/g, "");
 		v = v.replace(/(\d)(\d{8})$/, "$1.$2");
 		v = v.replace(/(\d)(\d{5})$/, "$1.$2");

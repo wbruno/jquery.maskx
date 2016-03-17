@@ -52,17 +52,22 @@
 
 
 	describe("maskx money", function() {
-		it("should be equal", function() {
-			expect(maskx.money('1234')).toEqual('12,34');
+		it("should be equal with input", function() {
+			expect(maskx.money(1234, 'input')).toEqual('12,34');
+			expect(maskx.money(12341, 'input')).toEqual('123,41');
+			expect(maskx.money('1.234,56', 'input')).toEqual('1.234,56');
+			expect(maskx.money('123456789', 'input')).toEqual('1.234.567,89');
+			expect(maskx.money(1234789123, 'input')).toEqual('12.347.891,23');
 		});
-		it("should be equal", function() {
-			expect(maskx.money('12345')).toEqual('123,45');
-		});
-		it("should be equal", function() {
-			expect(maskx.money('1.234,56')).toEqual('1.234,56');
-		});
-		it("should be equal", function() {
-			expect(maskx.money('123456789')).toEqual('1.234.567,89');
+		it("should be equal direct template", function() {
+			expect(maskx.money(1234)).toEqual('1.234,00');
+			expect(maskx.money(1234.1)).toEqual('1.234,10');
+			expect(maskx.money(1234.98)).toEqual('1.234,98');
+			expect(maskx.money('1234')).toEqual('1.234,00');
+			expect(maskx.money('12345')).toEqual('12.345,00');
+			expect(maskx.money('1234')).toEqual('1.234,00');
+			expect(maskx.money('1234.1')).toEqual('1.234,10');
+			expect(maskx.money('1234789123')).toEqual('1234.789.123,00');
 		});
 	});
 
