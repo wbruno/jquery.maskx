@@ -12,7 +12,7 @@
     "mask",
     "regex",
     "input",
-    "text",
+    "text"
   ],
   "license": "MIT",
   "ignore": [
