@@ -5,7 +5,7 @@
 *
 * @use jQuery('$input[name="cc"]').maskx({maskx: 'cc'});
 */
-; (function () {
+; (function ($) {
 	'use strict';
 	/*global nomen:true, jQuery: false, setTimeout:false */
 
@@ -20,9 +20,9 @@
 				setTimeout(_execmascara, 1);
 			};
 		return this.each(function () {
-			var $this = jQuery(this),
-				opts = jQuery.extend({}, jQuery.fn.maskx.defaults, settings),
-				maskxFunc = jQuery.fn.maskx[opts.maskx];
+			var $this = $(this),
+				opts = $.extend({}, $.fn.maskx.defaults, settings),
+				maskxFunc = $.fn.maskx[opts.maskx];
 
 			if (typeof maskxFunc === 'function') {
 
@@ -40,7 +40,9 @@
 			}
 		});
 	};
-	jQuery.fn.maskx = plugin;
+
+	$.fn.maskx = plugin;
+	$.maskx = plugin;
 
 	plugin.defaults = {
 		maskx: '',
@@ -116,4 +118,4 @@
 		v = v.replace(/(\d{1})(\d{2})(\d{2})/, "$1:$2.$3");
 		return v;
 	};
-}());
+}(jQuery));

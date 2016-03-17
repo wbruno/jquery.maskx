@@ -1,0 +1,25 @@
+{
+  "name": "jquery.maskx",
+  "homepage": "https://github.com/wbruno/jquery.maskx",
+  "authors": [
+    "William Bruno <wbrunom@gmail.com>"
+  ],
+  "description": "jQuery Plugin and Function mask for inputs and texts",
+  "main": "src/jquery.maskx.js",
+  "moduleType": [],
+  "keywords": [
+    "jquery",
+    "mask",
+    "regex",
+    "input",
+    "text",
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
