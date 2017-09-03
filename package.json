@@ -1,0 +1,27 @@
+{
+  "name": "jquery.maskx",
+  "version": "0.2.3",
+  "description": "Jquery Mask plugin that uses regex to format the field values",
+  "main": "src/jquery.maskx.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wbruno/jquery.maskx.git"
+  },
+  "keywords": [
+    "jquery",
+    "input",
+    "mask"
+  ],
+  "author": "William Bruno",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wbruno/jquery.maskx/issues"
+  },
+  "homepage": "https://github.com/wbruno/jquery.maskx#readme"
+}
