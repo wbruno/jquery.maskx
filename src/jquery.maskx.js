@@ -94,9 +94,13 @@
 		return v;
 	};
 	plugin.money = function (v, input) {
-		if (!input && /^\d+$/.test(v)) {
-			v = parseInt(v, 10) * 100;
-    	}		
+		if (!/number|string/.test(typeof v)) return ''
+
+		if (!input) {
+			v = parseFloat(v).toFixed(2)
+		}
+
+		
 		v = String(v || '');
 		v = v.replace(/(\d)\.(\d{1}$)/, "$1.$20");
 		v = v.replace(/\D/g, "");
@@ -104,6 +108,7 @@
 		v = v.replace(/(\d)(\d{5})$/, "$1.$2");
 		v = v.replace(/(\d)(\d{2})$/, "$1,$2");
 		return v;
+
 	};
 	plugin.phone = function (v) {
 		v = String(v || '');
