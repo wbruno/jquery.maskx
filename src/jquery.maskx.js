@@ -97,6 +97,8 @@
 		if (!input && /^\d+$/.test(v)) {
 			v = parseInt(v, 10) * 100;
     	}		
+
+    	v = parseFloat(v).toFixed(2)
 		v = String(v || '');
 		v = v.replace(/(\d)\.(\d{1}$)/, "$1.$20");
 		v = v.replace(/\D/g, "");
