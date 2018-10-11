@@ -63,6 +63,7 @@
 			expect(maskx.money(1234)).toEqual('1.234,00');
 			expect(maskx.money(1234.1)).toEqual('1.234,10');
 			expect(maskx.money(1234.98)).toEqual('1.234,98');
+			expect(maskx.money(96.00358749)).toEqual('96,00');
 			expect(maskx.money('1234')).toEqual('1.234,00');
 			expect(maskx.money('12345')).toEqual('12.345,00');
 			expect(maskx.money('1234')).toEqual('1.234,00');
