@@ -59,16 +59,36 @@
 			expect(maskx.money('123456789', 'input')).toEqual('1.234.567,89');
 			expect(maskx.money(1234789123, 'input')).toEqual('12.347.891,23');
 		});
+
 		it("should be equal direct template", function() {
 			expect(maskx.money(1234)).toEqual('1.234,00');
 			expect(maskx.money(1234.1)).toEqual('1.234,10');
 			expect(maskx.money(1234.98)).toEqual('1.234,98');
+			expect(maskx.money(101010)).toEqual('101.010,00');
+			expect(maskx.money(100)).toEqual('100,00');
+			expect(maskx.money(100.1)).toEqual('100,10');
+			expect(maskx.money(100.19)).toEqual('100,19');
+			expect(maskx.money(200.191)).toEqual('200,19');
+			expect(maskx.money(200.1919)).toEqual('200,19');
 			expect(maskx.money(96.00358749)).toEqual('96,00');
+			expect(maskx.money(1.1)).toEqual('1,10');
+			expect(maskx.money(1.127)).toEqual('1,13');
+			expect(maskx.money('1.127')).toEqual('1,13');
+			expect(maskx.money('200.1919')).toEqual('200,19');
+			expect(maskx.money('200.999')).toEqual('201,00');
 			expect(maskx.money('1234')).toEqual('1.234,00');
 			expect(maskx.money('12345')).toEqual('12.345,00');
 			expect(maskx.money('1234')).toEqual('1.234,00');
 			expect(maskx.money('1234.1')).toEqual('1.234,10');
 			expect(maskx.money('1234789123')).toEqual('1234.789.123,00');
+			expect(maskx.money(1)).toEqual('1,00');
+			expect(maskx.money(0)).toEqual('0,00');
+			expect(maskx.money({})).toEqual('');
+			expect(maskx.money([{}])).toEqual('');
+			expect(maskx.money()).toEqual('');
+			expect(maskx.money(undefined)).toEqual('');
+			expect(maskx.money(null)).toEqual('');
+			expect(maskx.money(NaN)).toEqual('');
 		});
 	});
 
